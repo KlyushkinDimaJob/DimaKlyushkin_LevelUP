@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.levelp.at</groupId>
@@ -11,12 +11,52 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <checkstyle.version>10.3.3</checkstyle.version>
 
         <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>positive test</id>
+            <properties>
+                <suite.xml>
+                    ${project.build.directory}/classes/ru/levelp/at/homework2/LuckyTicketNegativeSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>negative test</id>
+            <activation>
+                <activeByDefault>
+                    true
+                </activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>
+                    ${project.build.directory}/classes/ru/levelp/at/homework2/LuckyTicketNegativeSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>all test</id>
+            <properties>
+                <suite.xml>
+                    ${project.build.directory}/classes/ru/levelp/at/homework2/LuckyTicketAllSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.8.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -36,7 +76,6 @@
                         <!--  pay attention to use exact url for checkstyle plugin ruleset  -->
                         https://raw.githubusercontent.com/khda91/leveup-code-checkers-configurations/main/checkstyle/checkstyle.xml
                     </configLocation>
-                    <encoding>${project.build.sourceEncoding}</encoding>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <violationSeverity>warning</violationSeverity>
                     <consoleOutput>true</consoleOutput>
@@ -52,6 +91,18 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>
+                            ${suite.xml}
+                        </suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>
