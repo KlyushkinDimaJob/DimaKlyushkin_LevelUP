@@ -22,7 +22,7 @@
             <id>positive test</id>
             <properties>
                 <suite.xml>
-                    ${project.build.directory}/classes/ru/levelp/at/homework2/LuckyTicketNegativeSuite.xml
+                    ${project.build.directory}/test-classes/ru/levelp/at/homework2/suite/LuckyTicketPositiveSuite.xml
                 </suite.xml>
             </properties>
         </profile>
@@ -35,7 +35,7 @@
             </activation>
             <properties>
                 <suite.xml>
-                    ${project.build.directory}/classes/ru/levelp/at/homework2/LuckyTicketNegativeSuite.xml
+                    ${project.build.directory}/test-classes/ru/levelp/at/homework2/suite/LuckyTicketNegativeSuite.xml
                 </suite.xml>
             </properties>
         </profile>
@@ -43,7 +43,7 @@
             <id>all test</id>
             <properties>
                 <suite.xml>
-                    ${project.build.directory}/classes/ru/levelp/at/homework2/LuckyTicketAllSuite.xml
+                    ${project.build.directory}/test-classes/ru/levelp/at/homework2/suite/LuckyTicketAllSuite.xml
                 </suite.xml>
             </properties>
         </profile>
