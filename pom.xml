@@ -19,7 +19,7 @@
 
     <profiles>
         <profile>
-            <id>positive test</id>
+            <id>positive_test</id>
             <properties>
                 <suite.xml>
                     ${project.build.directory}/test-classes/ru/levelp/at/homework2/suite/LuckyTicketPositiveSuite.xml
@@ -27,7 +27,7 @@
             </properties>
         </profile>
         <profile>
-            <id>negative test</id>
+            <id>negative_test</id>
             <activation>
                 <activeByDefault>
                     true
@@ -40,7 +40,7 @@
             </properties>
         </profile>
         <profile>
-            <id>all test</id>
+            <id>all_test</id>
             <properties>
                 <suite.xml>
                     ${project.build.directory}/test-classes/ru/levelp/at/homework2/suite/LuckyTicketAllSuite.xml
