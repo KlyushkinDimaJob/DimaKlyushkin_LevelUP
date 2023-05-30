@@ -15,6 +15,6 @@ public class LuckyTicket {
             var rightSum = (number / 100 % 10) + (number / 10 % 10) + (number % 10);
             return leftSum == rightSum;
         }
-        return false;
+        throw new IllegalArgumentException("Неверный номер билета");
     }
 }

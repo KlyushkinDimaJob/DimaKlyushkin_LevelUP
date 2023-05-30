@@ -28,9 +28,8 @@ public class LuckyTicketTest {
     }
 
     @Test(groups = {"negative"}, dataProvider = "sizeNumberDataProvider",
-          dataProviderClass = LuckyTicketDataProvider.class)
+          dataProviderClass = LuckyTicketDataProvider.class, expectedExceptions = {IllegalArgumentException.class})
     public void testSizeNumber(Integer number) {
-        assertEquals(luckyTicket.isLuckyTicket(number), false,
-            "Ошибка проверки на длину номера билета");
+        luckyTicket.isLuckyTicket(number);
     }
 }
