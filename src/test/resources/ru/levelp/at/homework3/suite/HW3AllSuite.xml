@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="LuckyTicket All Suite">
+    <test name="LuckyTicket All Tests">
+        <packages>
+            <package name="ru.levelp.at.homework3.*"/>
+        </packages>
+    </test>
+</suite>

@@ -11,6 +11,8 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <checkstyle.version>10.3.3</checkstyle.version>
 
@@ -19,7 +21,7 @@
 
     <profiles>
         <profile>
-            <id>positive_test</id>
+            <id>hw2_positive_test</id>
             <properties>
                 <suite.xml>
                     ${project.build.directory}/test-classes/ru/levelp/at/homework2/suite/LuckyTicketPositiveSuite.xml
@@ -27,7 +29,7 @@
             </properties>
         </profile>
         <profile>
-            <id>negative_test</id>
+            <id>hw2_negative_test</id>
             <activation>
                 <activeByDefault>
                     true
@@ -40,10 +42,18 @@
             </properties>
         </profile>
         <profile>
-            <id>all_test</id>
+            <id>hw2_all_test</id>
             <properties>
                 <suite.xml>
                     ${project.build.directory}/test-classes/ru/levelp/at/homework2/suite/LuckyTicketAllSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw3_all_test</id>
+            <properties>
+                <suite.xml>
+                    ${project.build.directory}/test-classes/ru/levelp/at/homework3/suite/HW3AllSuite.xml
                 </suite.xml>
             </properties>
         </profile>
@@ -55,6 +65,11 @@
             <artifactId>testng</artifactId>
             <version>7.8.0</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.9.1</version>
         </dependency>
     </dependencies>
 
