@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MessagePage extends BaseMailPage{
+public class MessagePage extends BaseMailPage {
     @FindBy(css = "span.letter-contact")
     protected WebElement messageReceiver;
     @FindBy(css = "h2.thread-subject")
@@ -15,23 +15,23 @@ public class MessagePage extends BaseMailPage{
     @FindBy(xpath = "//div[@class='button2__txt' and contains(.,'Удалить')]")
     protected WebElement btnDel;
 
-    public MessagePage(WebDriver driver){
+    public MessagePage(WebDriver driver) {
         super(driver);
     }
 
-    public String getMessageReceiver(){
+    public String getMessageReceiver() {
         return messageReceiver.getAttribute("Title");
     }
 
-    public String getMessageTitle(){
+    public String getMessageTitle() {
         return messageTitle.getText();
     }
 
-    public String getMessageText(){
+    public String getMessageText() {
         return messageText.getText();
     }
 
-    public void delMessage(){
+    public void delMessage() {
         btnDel.click();
     }
 }

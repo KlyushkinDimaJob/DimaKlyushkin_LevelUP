@@ -1,12 +1,12 @@
 package ru.levelp.at.homework4;
 
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
 public class BaseMailPage {
     protected WebDriver driver;
@@ -15,17 +15,23 @@ public class BaseMailPage {
     protected WebElement imgProfile;
     @FindBy(css = "span.sidebar__menu-ico")
     protected WebElement navigationMenu;
-    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' and contains(.,'Отправленные')]")
+    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' "
+        + "and contains(.,'Отправленные')]")
     protected WebElement sentFolder;
-    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' and contains(.,'Входящие')]")
+    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' "
+        + "and contains(.,'Входящие')]")
     protected WebElement incomingFolder;
-    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' and contains(.,'Письма себе')]")
+    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' "
+        + "and contains(.,'Письма себе')]")
     protected WebElement tomyselfFolder;
-    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' and contains(.,'Черновики')]")
+    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' "
+        + "and contains(.,'Черновики')]")
     protected WebElement draftFolder;
-    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' and contains(.,'Корзина')]")
+    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' "
+        + "and contains(.,'Корзина')]")
     protected WebElement trashFolder;
-    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' and contains(.,'Тест')]")
+    @FindBy(xpath = "//div[@class='sidebar__full fn-enter']//div[@class='nav__folder-name__txt' "
+        + "and contains(.,'Тест')]")
     protected WebElement testFolder;
     @FindBy(css = "div[data-testid='whiteline-account']")
     protected WebElement btnAccount;
@@ -46,7 +52,7 @@ public class BaseMailPage {
     @FindBy(css = "button[title='Закрыть']")
     protected WebElement btnCloseMessage;
     @FindBy(xpath = "//span[@title='Закрыть']")
-    WebElement infoSendMessage;
+    protected WebElement infoSendMessage;
     @FindBy(css = "div[class='contactsContainer--3RMuQ'] span[class='text--1tHKB']")
     protected WebElement editTextMessageReceiver;
     @FindBy(css = "input[name='Subject']")
@@ -61,92 +67,92 @@ public class BaseMailPage {
         PageFactory.initElements(driver, this);
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return imgProfile.getAttribute("alt");
     }
 
-    public void openSentFolder(){
+    public void openSentFolder() {
         navigationMenu.click();
         sentFolder.click();
         wait.until(ExpectedConditions.titleContains("Отправленные"));
     }
 
-    public void openIncomingFolder(){
+    public void openIncomingFolder() {
         navigationMenu.click();
         incomingFolder.click();
         wait.until(ExpectedConditions.titleContains("Входящие"));
     }
 
-    public void openTomyselfFolder(){
+    public void openTomyselfFolder() {
         navigationMenu.click();
         tomyselfFolder.click();
         wait.until(ExpectedConditions.titleContains("Письма себе"));
     }
 
-    public void openDraftFolder(){
+    public void openDraftFolder() {
         navigationMenu.click();
         draftFolder.click();
         wait.until(ExpectedConditions.titleContains("Черновики"));
     }
 
-    public void openTrashFolder(){
+    public void openTrashFolder() {
         navigationMenu.click();
         trashFolder.click();
         wait.until(ExpectedConditions.titleContains("Корзина"));
     }
 
-    public void openTestFolder(){
+    public void openTestFolder() {
         navigationMenu.click();
         testFolder.click();
         wait.until(ExpectedConditions.titleContains("Тест"));
     }
 
-    public void logout(){
+    public void logout() {
         btnAccount.click();
         btnExit.click();
     }
 
-    public void openNewMessage(){
+    public void openNewMessage() {
         btnNewMessage.click();
     }
 
-    public void fillTitleMessage(String text){
+    public void fillTitleMessage(String text) {
         editMessageTitle.sendKeys(text);
     }
 
-    public void fillReceiverMessage(String text){
+    public void fillReceiverMessage(String text) {
         editMessageReceiver.sendKeys(text);
     }
 
-    public void fillTextMessage(String text){
+    public void fillTextMessage(String text) {
         editMessageText.sendKeys(text);
     }
 
-    public String getTitleMessage(){
+    public String getTitleMessage() {
         return editTextMessageTitle.getAttribute("value");
     }
 
-    public String getReceiverMessage(){
+    public String getReceiverMessage() {
         return editTextMessageReceiver.getText();
     }
 
-    public String getTextMessage(){
+    public String getTextMessage() {
         return editTextMessageText.getText();
     }
 
-    public void sendMessage(){
+    public void sendMessage() {
         wait.until(ExpectedConditions.elementToBeClickable(btnSendMessage)).click();
     }
 
-    public void saveMessage(){
+    public void saveMessage() {
         wait.until(ExpectedConditions.elementToBeClickable(btnSaveMessage)).click();
     }
 
-    public void closeMessage(){
+    public void closeMessage() {
         wait.until(ExpectedConditions.elementToBeClickable(btnCloseMessage)).click();
     }
 
-    public void closeInfoSendMessage(){
+    public void closeInfoSendMessage() {
         wait.until(ExpectedConditions.elementToBeClickable(infoSendMessage)).click();
     }
 }

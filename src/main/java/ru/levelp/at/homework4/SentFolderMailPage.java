@@ -1,16 +1,16 @@
 package ru.levelp.at.homework4;
 
+import java.time.Duration;
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import java.time.Duration;
-import java.util.List;
 
-public class SentFolderMailPage extends BaseMailPage{
+public class SentFolderMailPage extends BaseMailPage {
     @FindBy(xpath = "//span[@class='ll-sj__normal']")
     private List<WebElement> messages;
 
-    public SentFolderMailPage(WebDriver driver){
+    public SentFolderMailPage(WebDriver driver) {
         super(driver);
     }
 

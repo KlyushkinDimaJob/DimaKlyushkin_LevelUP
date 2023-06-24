@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="HW4 All Suite">
+    <test name="HW4 All Tests">
+        <groups>
+            <run>
+                <include name="hw4"/>
+            </run>
+        </groups>
+    </test>
+</suite>
