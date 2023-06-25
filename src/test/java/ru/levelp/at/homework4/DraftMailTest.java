@@ -39,7 +39,7 @@ public class DraftMailTest extends MailTestBase {
         draftFolderMailPage.closeInfoSendMessage();
 
         //Verify, что письмо исчезло из черновиков
-        assertFalse(draftFolderMailPage.isExistMessage(titleMessage + dateNow), "Письмо осталось в черновиках");
+        assertTrue(draftFolderMailPage.isNotExistMessage(titleMessage + dateNow), "Письмо осталось в черновиках");
 
         //Verify, что письмо появилось в папке отправленные
         SentFolderMailPage sentFolderMailPage = new SentFolderMailPage(driver);

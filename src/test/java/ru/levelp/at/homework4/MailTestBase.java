@@ -18,7 +18,7 @@ public abstract class MailTestBase {
     protected WebDriverWait wait;
     protected Properties properties;
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"hw4"})
     protected void beforeMethod() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -27,7 +27,7 @@ public abstract class MailTestBase {
         authorization();
     }
 
-    @AfterMethod
+    @AfterMethod(groups = {"hw4"})
     protected void afterMethod() {
         logout();
         driver.quit();
