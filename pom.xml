@@ -57,6 +57,14 @@
                 </suite.xml>
             </properties>
         </profile>
+        <profile>
+            <id>hw4_all_test</id>
+            <properties>
+                <suite.xml>
+                    ${project.build.directory}/test-classes/ru/levelp/at/homework4/suite/HW4AllSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
