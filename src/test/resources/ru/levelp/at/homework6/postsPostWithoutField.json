@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Test",
+        "body": "Test",
+        "errorModel": [
+            {
+                "field": "user",
+                "message": "must exist"
+            },
+            {
+                "field": "user_id",
+                "message": "is not a number"
+            }
+        ]
+    },
+    {
+        "user_id": 0,
+        "body": "Test",
+        "errorModel": [
+            {
+                "field": "user",
+                "message": "must exist"
+            },
+            {
+                "field": "title",
+                "message": "can't be blank"
+            }
+        ]
+    },
+    {
+        "user_id": 0,
+        "title": "Test",
+        "errorModel": [
+            {
+                "field": "user",
+                "message": "must exist"
+            },
+            {
+                "field": "body",
+                "message": "can't be blank"
+            }
+        ]
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Test",
+        "email": "Test@lindgren.net",
+        "body": "Test test",
+        "errorModel": [
+            {
+                "field": "post",
+                "message": "must exist"
+            },
+            {
+                "field": "post_id",
+                "message": "is not a number"
+            }
+        ]
+    },
+    {
+        "post_id": 0,
+        "email": "Test@lindgren.net",
+        "body": "Test test",
+        "errorModel": [
+            {
+                "field": "post",
+                "message": "must exist"
+            },
+            {
+                "field": "name",
+                "message": "can't be blank"
+            }
+        ]
+    },
+    {
+        "post_id": 0,
+        "name": "Test",
+        "body": "Test test",
+        "errorModel": [
+            {
+                "field": "post",
+                "message": "must exist"
+            },
+            {
+                "field": "email",
+                "message": "can't be blank, is invalid"
+            }
+        ]
+    },
+    {
+        "post_id": 0,
+        "name": "Test",
+        "email": "Test@lindgren.net",
+        "errorModel": [
+            {
+                "field": "post",
+                "message": "must exist"
+            },
+            {
+                "field": "body",
+                "message": "can't be blank"
+            }
+        ]
+    }
+]
