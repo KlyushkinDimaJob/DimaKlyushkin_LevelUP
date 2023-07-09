@@ -1,0 +1,46 @@
+[
+    {
+        "email": "Test@lindgren.net",
+        "gender": "male",
+        "status": "inactive",
+        "errorModel": [
+            {
+                "field": "name",
+                "message": "can't be blank"
+            }
+        ]
+    },
+    {
+        "name": "Test Test",
+        "gender": "male",
+        "status": "inactive",
+        "errorModel": [
+            {
+                "field": "email",
+                "message": "can't be blank"
+            }
+        ]
+    },
+    {
+        "name": "Test Test",
+        "email": "Test@lindgren.net",
+        "status": "inactive",
+        "errorModel": [
+            {
+                "field": "gender",
+                "message": "can't be blank, can be male of female"
+            }
+        ]
+    },
+    {
+        "name": "Test Test",
+        "email": "Test@lindgren.net",
+        "gender": "male",
+        "errorModel": [
+            {
+                "field": "status",
+                "message": "can't be blank"
+            }
+        ]
+    }
+]
